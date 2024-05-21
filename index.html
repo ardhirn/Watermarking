@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCT Watermarking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DCT Watermarking</h1>
+        <div class="menu">
+            <button id="embedMenu">Embed Watermark</button>
+            <button id="extractMenu">Extract Watermark</button>
+        </div>
+
+        <div id="embedSection" class="section">
+            <h2>Embed Watermark</h2>
+            <input type="file" id="imageInput" accept="image/*">
+            <input type="file" id="watermarkInput" accept="image/*">
+            <label for="alphaRange">Alpha:</label>
+            <input type="range" id="alphaRange" min="0" max="1" step="0.01" value="0.1">
+            <span id="alphaValue">0.1</span>
+            <br>
+            <button id="embedButton">Embed Watermark</button>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <div id="outputContainer">
+                <img id="outputImage" src="#" alt="Watermarked Image">
+                <a id="downloadLink" href="#" download="watermarked_image.png">Download Watermarked Image</a>
+            </div>
+        </div>
+
+        <div id="extractSection" class="section" style="display: none;">
+            <h2>Extract Watermark</h2>
+            <input type="file" id="originalImageInput" accept="image/*">
+            <input type="file" id="watermarkedImageInput" accept="image/*">
+            <button id="extractButton">Extract Watermark</button>
+            <div id="outputContainerExtract">
+                <img id="extractedWatermark" src="#" alt="Extracted Watermark">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
